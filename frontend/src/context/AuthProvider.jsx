@@ -1,8 +1,6 @@
-/* eslint-disable react-refresh/only-export-components */
-import React, { createContext, useState } from 'react';
+import React, { useState } from 'react';
 import api from '../api/axios';
-
-export const AuthContext = createContext();
+import { AuthContext } from './AuthContext';
 
 export const AuthProvider = ({ children }) => {
     const [user, setUser] = useState(() => {

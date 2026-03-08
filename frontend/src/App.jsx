@@ -1,10 +1,11 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 
 // Layout & Context
 import Navbar from './components/Navbar';
 import Sidebar from './components/Sidebar';
-import { AuthContext, AuthProvider } from './context/AuthContext';
+import { AuthProvider } from './context/AuthProvider';
+import { useAuth } from './context/AuthContext';
 
 // Pages
 import LandingPage from './pages/LandingPage';
@@ -15,7 +16,7 @@ import AttackSimulatorPage from './pages/AttackSimulatorPage';
 import SecurityReportsPage from './pages/SecurityReportsPage';
 
 const PrivateRoute = ({ children }) => {
-  const { user } = useContext(AuthContext);
+  const { user } = useAuth();
 
   return user ? (
     <div className="flex bg-slate-900 min-h-screen">

@@ -1,9 +1,9 @@
-import React, { useContext } from 'react';
-import { AuthContext } from '../context/AuthContext';
+import React from 'react';
+import { useAuth } from '../context/AuthContext';
 import { LogOut, User } from 'lucide-react';
 
 export default function Navbar() {
-    const { user, logout } = useContext(AuthContext);
+    const { user, logout } = useAuth();
 
     return (
         <header className="bg-slate-800 border-b border-slate-700 p-4 sticky top-0 z-30">

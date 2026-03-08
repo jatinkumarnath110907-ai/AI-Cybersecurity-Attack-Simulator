@@ -1,8 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Shield } from 'lucide-react';
-// eslint-disable-next-line no-unused-vars
 import { motion } from 'framer-motion';
+
+const MotionDiv = motion.div;
 
 export default function LandingPage() {
     return (
@@ -12,9 +13,9 @@ export default function LandingPage() {
                 <div className="absolute top-40 right-10 w-96 h-96 bg-purple-600 rounded-full blur-3xl mix-blend-screen opacity-30 animate-pulse" style={{ animationDelay: '1s' }}></div>
             </div>
 
-            <motion.div animate={{ y: [0, -10, 0] }} transition={{ repeat: Infinity, duration: 3 }}>
+            <MotionDiv animate={{ y: [0, -10, 0] }} transition={{ repeat: Infinity, duration: 3 }}>
                 <Shield className="w-24 h-24 text-blue-500 mb-8" />
-            </motion.div>
+            </MotionDiv>
 
             <h1 className="text-5xl md:text-7xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-500 mb-6 drop-shadow-lg">
                 AI Cybersecurity Attack Simulator

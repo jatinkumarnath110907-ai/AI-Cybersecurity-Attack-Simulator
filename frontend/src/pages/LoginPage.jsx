@@ -1,10 +1,10 @@
-import React, { useState, useContext } from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { AuthContext } from '../context/AuthContext';
+import { useAuth } from '../context/AuthContext';
 import { ShieldAlert } from 'lucide-react';
 
 export default function LoginPage() {
-    const { login, register } = useContext(AuthContext);
+    const { login, register } = useAuth();
     const [isLogin, setIsLogin] = useState(false); // Default to registration so new users don't fail login
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
